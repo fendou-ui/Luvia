@@ -1,0 +1,20 @@
+PODS:
+  - SnapKit (5.7.1)
+  - ZKProgressHUD (5.1.2)
+
+DEPENDENCIES:
+  - SnapKit
+  - ZKProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - ZKProgressHUD
+
+SPEC CHECKSUMS:
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  ZKProgressHUD: af9e9929c6935587da382bf23d31b4e995b8c229
+
+PODFILE CHECKSUM: 14b61c453e1629d5ae25ef9d2c6bfea8013d7b39
+
+COCOAPODS: 1.16.2

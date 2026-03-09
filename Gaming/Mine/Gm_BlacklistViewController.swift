@@ -146,7 +146,10 @@ extension Gm_BlacklistViewController: UITableViewDelegate, UITableViewDataSource
         let model = gm_blacklist[indexPath.row]
         cell.gm_config(model: model)
         cell.gm_removeCallback = { [weak self] in
-            self?.gm_removeFromBlacklist(at: indexPath.row)
+            guard let self = self else { return }
+            if let currentIndex = self.gm_blacklist.firstIndex(where: { $0.gm_userId == model.gm_userId }) {
+                self.gm_removeFromBlacklist(at: currentIndex)
+            }
         }
         return cell
     }

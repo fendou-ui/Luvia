@@ -138,7 +138,12 @@ extension Gm_FollowingViewController: UITableViewDelegate, UITableViewDataSource
         let model = gm_followingList[indexPath.row]
         cell.gm_config(model: model)
         cell.gm_messageCallback = { [weak self] in
-            print("gm_message_tapped: \(model.gm_name)")
+            let vc = Gm_UserChatViewController()
+            vc.gm_userId = model.gm_id
+            vc.gm_userName = model.gm_name
+            vc.gm_userAvatar = model.gm_avatar
+            vc.hidesBottomBarWhenPushed = true
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }

@@ -141,12 +141,12 @@ extension Gm_SettingsViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             // Privacy agreement
-            if let url = URL(string: "https://www.example.com/privacy") {
+            if let url = URL(string: "https://sites.google.com/view/cuknok/lviaat") {
                 UIApplication.shared.open(url)
             }
         case 1:
             // User agreement
-            if let url = URL(string: "https://www.example.com/terms") {
+            if let url = URL(string: "https://sites.google.com/view/geoejg/user") {
                 UIApplication.shared.open(url)
             }
         case 2:

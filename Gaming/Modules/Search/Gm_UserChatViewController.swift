@@ -51,7 +51,7 @@ class Gm_UserChatViewController: UIViewController {
         tv.delegate = self
         tv.dataSource = self
         tv.register(Gm_ChatCell.self, forCellReuseIdentifier: "Gm_ChatCell")
-        tv.keyboardDismissMode = .onDrag
+        tv.keyboardDismissMode = .interactive
         return tv
     }()
     
@@ -123,6 +123,10 @@ class Gm_UserChatViewController: UIViewController {
         gm_setupData()
         gm_loadMessages()
         gm_addKeyboardObservers()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(gm_dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        gm_tableView.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -257,6 +261,10 @@ class Gm_UserChatViewController: UIViewController {
     
     @objc private func gm_backAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func gm_dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @objc private func gm_moreAction() {

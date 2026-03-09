@@ -57,7 +57,7 @@ class Gm_ChatViewController: UIViewController {
         tv.delegate = self
         tv.dataSource = self
         tv.register(Gm_ChatCell.self, forCellReuseIdentifier: "Gm_ChatCell")
-        tv.keyboardDismissMode = .onDrag
+        tv.keyboardDismissMode = .interactive
         return tv
     }()
     
@@ -133,6 +133,10 @@ class Gm_ChatViewController: UIViewController {
         gm_setupData()
         gm_loadMockMessages()
         gm_addKeyboardObservers()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(gm_dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        gm_tableView.addGestureRecognizer(tap)
     }
     
     override func viewDidLayoutSubviews() {
@@ -246,6 +250,10 @@ class Gm_ChatViewController: UIViewController {
     
     @objc private func gm_backAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func gm_dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @objc private func gm_sendAction() {

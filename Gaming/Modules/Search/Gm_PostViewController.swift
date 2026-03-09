@@ -128,6 +128,10 @@ class Gm_PostViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         gm_setupUI()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(gm_dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -225,6 +229,10 @@ class Gm_PostViewController: UIViewController {
     
     @objc private func gm_backAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func gm_dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @objc private func gm_addVideoAction() {

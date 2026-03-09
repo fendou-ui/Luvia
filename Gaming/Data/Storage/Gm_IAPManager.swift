@@ -6,13 +6,14 @@ import Foundation
 import StoreKit
 
 // 内购产品ID
-struct Gm_IAPProducts {
+struct Gm_IAPProducts {/// cskboibyenpgpmws
     static let gm_coins20 = "new_1000"
-    static let gm_coins50 = "com.gaming.coins50"
-    static let gm_coins100 = "com.gaming.coins100"
-    static let gm_coins200 = "com.gaming.coins200"
-    static let gm_coins500 = "com.gaming.coins500"
-    static let gm_coins1000 = "com.gaming.coins1000"
+    static let gm_coins50 = "iupegqvtwyzimdbt"
+    static let gm_coins100 = "pzatanvkndrydlgc"
+    static let gm_coins200 = "ipyupjnsakxjptho"
+    static let gm_coins500 = "hkshgidniqmwfnbt"
+    static let gm_coins1000 = "icrjiyuggvpklyiy"
+    static let gm_coins2000 = "rfppkdsjkefimbvq"
     
     static let gm_allProducts: Set<String> = [
         gm_coins20, gm_coins50, gm_coins100,

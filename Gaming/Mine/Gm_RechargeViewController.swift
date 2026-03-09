@@ -17,7 +17,8 @@ class Gm_RechargeViewController: UIViewController {
         ("2000", "$4.99", Gm_IAPProducts.gm_coins100),
         ("5000", "$9.99", Gm_IAPProducts.gm_coins200),
         ("12000", "$19.99", Gm_IAPProducts.gm_coins500),
-        ("49999", "$39.99", Gm_IAPProducts.gm_coins1000)
+        ("49999", "$49.99", Gm_IAPProducts.gm_coins1000),
+        ("49999", "$99.99", Gm_IAPProducts.gm_coins2000),
     ]
     
     private var gm_selectedIndex: Int = 0
@@ -50,7 +51,7 @@ class Gm_RechargeViewController: UIViewController {
     private lazy var gm_coinsBgIv: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Profile_coins")
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleToFill
         iv.clipsToBounds = true
         return iv
     }()

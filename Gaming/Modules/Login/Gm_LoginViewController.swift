@@ -187,12 +187,14 @@ class Gm_LoginViewController: UIViewController {
     }
     
     private func gm_showUserAgreement() {
-        print("gm_nav: 打开用户协议")
-        // TODO: 跳转用户协议页面
+        if let url = URL(string: "https://sites.google.com/view/geoejg/user") {
+            UIApplication.shared.open(url)
+        }
     }
     
     private func gm_showPrivacyPolicy() {
-        print("gm_nav: 打开隐私政策")
-        // TODO: 跳转隐私政策页面
+        if let url = URL(string: "https://sites.google.com/view/cuknok/lviaat") {
+            UIApplication.shared.open(url)
+        }
     }
 }

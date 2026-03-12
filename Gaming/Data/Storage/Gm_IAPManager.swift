@@ -6,8 +6,8 @@ import Foundation
 import StoreKit
 
 // 内购产品ID
-struct Gm_IAPProducts {/// cskboibyenpgpmws
-    static let gm_coins20 = "new_1000"
+struct Gm_IAPProducts {
+    static let gm_coins20 = "cskboibyenpgpmws"
     static let gm_coins50 = "iupegqvtwyzimdbt"
     static let gm_coins100 = "pzatanvkndrydlgc"
     static let gm_coins200 = "ipyupjnsakxjptho"
@@ -17,7 +17,8 @@ struct Gm_IAPProducts {/// cskboibyenpgpmws
     
     static let gm_allProducts: Set<String> = [
         gm_coins20, gm_coins50, gm_coins100,
-        gm_coins200, gm_coins500, gm_coins1000
+        gm_coins200, gm_coins500, gm_coins1000,
+        gm_coins2000
     ]
 }
 

@@ -220,6 +220,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaming/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Luvia;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The APP needs your consent to use the camera to post updates and video chat.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application needs to obtain your location information to provide location-based services";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone access to use the voice call feature";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This APP requires your consent to change your profile picture and post updates";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -257,6 +261,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaming/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Luvia;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The APP needs your consent to use the camera to post updates and video chat.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application needs to obtain your location information to provide location-based services";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone access to use the voice call feature";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This APP requires your consent to change your profile picture and post updates";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

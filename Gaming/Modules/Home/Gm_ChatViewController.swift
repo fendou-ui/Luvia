@@ -137,6 +137,21 @@ class Gm_ChatViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(gm_dismissKeyboard))
         tap.cancelsTouchesInView = false
         gm_tableView.addGestureRecognizer(tap)
+        
+        // 首次进入弹出AI信息收集提示
+        let agreedKey = "gm_ai_privacy_agreed"
+        let hasAgreed = UserDefaults.standard.bool(forKey: agreedKey)
+        if !hasAgreed {
+            let alertView = Gm_CoinAlertView(useBgImage: false)
+            alertView.gm_titleText = "To provide AI chat functionality, the text content you enter in chat and your user identifier (such as user ID) will be transmitted to a third-party AI service provider for processing to generate responses.\n\nThis data is used solely for generating chat replies and will not be used for other purposes."
+            alertView.gm_noCallback = { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            alertView.gm_yesCallback = {
+                UserDefaults.standard.set(true, forKey: agreedKey)
+            }
+            alertView.gm_show(in: self.view)
+        }
     }
     
     override func viewDidLayoutSubviews() {

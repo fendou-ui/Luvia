@@ -289,20 +289,25 @@ extension Gm_HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let hasPaid = UserDefaults.standard.bool(forKey: paidKey)
         
         if !hasPaid {
-            // 首次点击需要支付99金币
-            if Gm_CoinsManager.shared.gm_hasEnoughCoins(99) {
-                // 扣除金币
-                _ = Gm_CoinsManager.shared.gm_spendCoins(99)
-                // 标记已支付
-                UserDefaults.standard.set(true, forKey: paidKey)
-                // 进入聊天页面
-                gm_pushToChatVC(model: model)
-            } else {
-                // 金币不足，跳转充值页面
-                let vc = Gm_RechargeViewController()
-                vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: true)
+            // 首次点击弹出金币确认卡片
+            let alertView = Gm_CoinAlertView()
+            alertView.gm_yesCallback = { [weak self] in
+                guard let self = self else { return }
+                if Gm_CoinsManager.shared.gm_hasEnoughCoins(99) {
+                    // 扣除金币
+                    _ = Gm_CoinsManager.shared.gm_spendCoins(99)
+                    // 标记已支付
+                    UserDefaults.standard.set(true, forKey: paidKey)
+                    // 进入聊天页面
+                    self.gm_pushToChatVC(model: model)
+                } else {
+                    // 金币不足，跳转充值页面
+                    let vc = Gm_RechargeViewController()
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
+            alertView.gm_show(in: self.view)
         } else {
             // 已支付过，直接进入
             gm_pushToChatVC(model: model)
